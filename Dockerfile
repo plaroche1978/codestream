@@ -16,8 +16,8 @@ RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
         
 ENV PATH="/idem/bin:$PATH"
 
-RUN yum update -y && yum -y install curl wget unzip git ca-certificates openssl jq && \
+RUN yum -y install curl wget unzip git ca-certificates openssl jq && \
     cat /tmp/vmware-issue.crt >> /etc/pki/tls/certs/ca-bundle.crt && \
     cat /tmp/vmware-root.crt >> /etc/pki/tls/certs/ca-bundle.crt
 
-ENTRYPOINT [ "idem" ]
+# ENTRYPOINT [ "idem" ]
