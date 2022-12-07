@@ -12,9 +12,9 @@ RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
         source idem/bin/activate && \
         pip3 install --upgrade pip && \
         pip3 install --upgrade setuptools && \
-        pip3 install idem && \
-        pip3 install idem-aws && \
-        pip3 install idem-azure-auto
+        pip install idem && \
+        pip install idem-aws && \
+        pip install idem-azure-auto
 
 ENV PATH="/idem/bin:$PATH"
 
