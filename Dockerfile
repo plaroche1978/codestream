@@ -1,4 +1,4 @@
-FROM photon:4.0
+FROM photon:3.0
 LABEL maintainer="plaroche@vmware.com"
 
 ENV PYTHON_VERSION=python3-3.7.5-9.ph3
