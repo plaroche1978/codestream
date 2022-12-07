@@ -12,8 +12,11 @@ RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
         source idem/bin/activate && \
         pip3 install --upgrade pip && \
         pip3 install --upgrade setuptools && \
-        pip3 install idem==${IDEM_VERSION} idem-azure-auto==${IDEM_AZURE_AUTO_VERSION}
-        
+        pip3 install idem && \
+        pip3 install && \ 
+        pip install idem-aws && \
+        pip install idem-azure-auto
+
 ENV PATH="/idem/bin:$PATH"
 
 RUN yum -y install curl wget unzip git ca-certificates openssl jq && \
