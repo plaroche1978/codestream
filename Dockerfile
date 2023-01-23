@@ -7,7 +7,8 @@ ENV IDEM_VERSION=15.0.0
 ENV IDEM_AZURE_AUTO_VERSION=0.0.3
 ADD ca-trust /tmp/
 
-RUN yum -y install openssh
+RUN yum -y install openssh && \
+    yum install sshpass && \
 RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
         python3 -m venv idem && \
         source idem/bin/activate && \
@@ -20,8 +21,4 @@ ENV PATH="/idem/bin:$PATH"
 RUN yum -y install curl wget unzip git ca-certificates openssl jq && \
     cat /tmp/vmware-issue.crt >> /etc/pki/tls/certs/ca-bundle.crt && \
     cat /tmp/vmware-root.crt >> /etc/pki/tls/certs/ca-bundle.crt
-#RUN yum -y install openssh
-    #yum install epel-release
-    #yum install sshpass
-
 # ENTRYPOINT [ "idem" ]
