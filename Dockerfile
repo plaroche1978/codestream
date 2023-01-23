@@ -7,12 +7,12 @@ ENV IDEM_VERSION=15.0.0
 ENV IDEM_AZURE_AUTO_VERSION=0.0.3
 ADD ca-trust /tmp/
 
-RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y &&\
-        python3 -m venv idem &&\
-        source idem/bin/activate &&\
-        pip3 install --upgrade pip &&\
-        pip3 install --upgrade setuptools &&\
-        pip install idem idem-aws &&\
+RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
+        python3 -m venv idem && \
+        source idem/bin/activate && \
+        pip3 install --upgrade pip && \
+        pip3 install --upgrade setuptools && \
+        pip install idem idem-aws
         #pip install idem-azure-auto
 ENV PATH="/idem/bin:$PATH"
 
