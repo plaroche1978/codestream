@@ -8,7 +8,7 @@ ENV IDEM_AZURE_AUTO_VERSION=0.0.3
 ADD ca-trust /tmp/
 
 RUN yum -y install openssh-clients && \
-    yum -y install sshpass && \
+    yum -y install sshpass
 RUN tdnf install ${PYTHON_VERSION} ${PIP_VERSION} -y && \
         python3 -m venv idem && \
         source idem/bin/activate && \
