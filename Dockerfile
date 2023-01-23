@@ -19,7 +19,7 @@ ENV PATH="/idem/bin:$PATH"
 RUN yum -y install curl wget unzip git ca-certificates openssl jq && \
     cat /tmp/vmware-issue.crt >> /etc/pki/tls/certs/ca-bundle.crt && \
     cat /tmp/vmware-root.crt >> /etc/pki/tls/certs/ca-bundle.crt
-RUN systemctl start sshd
+RUN yum -y install openssh
     #yum install epel-release
     #yum install sshpass
 
