@@ -20,8 +20,8 @@ ENV PATH="/idem/bin:$PATH"
 RUN yum -y install curl wget unzip git ca-certificates openssl jq && \
     cat /tmp/vmware-issue.crt >> /etc/pki/tls/certs/ca-bundle.crt && \
     cat /tmp/vmware-root.crt >> /etc/pki/tls/certs/ca-bundle.crt
-    yum -y install ssh
-    yum install epel-release
-    yum install sshpass
+RUN yum -y install ssh
+RUN yum install epel-release
+RUN yum install sshpass
 
 # ENTRYPOINT [ "idem" ]
